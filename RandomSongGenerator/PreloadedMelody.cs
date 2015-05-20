@@ -5,17 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-
 namespace RandomSongGenerator
 {
-    class MelodyGenerator
+    class PreloadedMelody
     {
         public void PreloadedMelody()
         {
             // Declare the first few notes of the song, "Mary Had A Little Lamb".
             Note[] Mary = 
             {
-        
                 new Note(Tone.B, Duration.DOTTEDHALF),
                 new Note(Tone.A, Duration.QUARTER),
                 new Note(Tone.GbelowC, Duration.QUARTER),
@@ -42,12 +40,12 @@ namespace RandomSongGenerator
                 new Note(Tone.A, Duration.QUARTER),
                 new Note(Tone.GbelowC, Duration.WHOLE),
             };
-            // Play the song
+            
             Play(Mary);
         }
 
         // Play the notes in a song. 
-        protected static void Play(Note[] tune)
+        public static void Play(Note[] tune)
         {
             foreach (Note n in tune)
             {
@@ -58,7 +56,4 @@ namespace RandomSongGenerator
             }
         }
     }
-
-
 }
-
