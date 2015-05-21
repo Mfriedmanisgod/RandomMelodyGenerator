@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.PlayButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PlayButton
@@ -42,11 +43,22 @@
             this.PlayButton.UseVisualStyleBackColor = true;
             this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(68, 236);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 92);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Randomize!!";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 386);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PlayButton);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -58,6 +70,7 @@
         #endregion
 
         private System.Windows.Forms.Button PlayButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

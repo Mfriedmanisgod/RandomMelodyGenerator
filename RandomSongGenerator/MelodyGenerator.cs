@@ -42,12 +42,28 @@ namespace RandomSongGenerator
                 new Note(Tone.A, Duration.QUARTER),
                 new Note(Tone.GbelowC, Duration.WHOLE),
             };
+
+            Note[] Smoke = 
+            {
+                new Note(Tone.A, Duration.QUARTER),
+                new Note(Tone.C, Duration.QUARTER),
+                new Note(Tone.D, Duration.DOTTEDQUARTER),
+                new Note(Tone.A, Duration.QUARTER),
+                new Note(Tone.C, Duration.QUARTER),
+                new Note(Tone.Dsharp, Duration.EIGHTH),
+                new Note(Tone.D, Duration.HALF),
+                new Note(Tone.A, Duration.QUARTER),
+                new Note(Tone.C, Duration.QUARTER),
+                new Note(Tone.D, Duration.DOTTEDQUARTER),
+                new Note(Tone.C, Duration.QUARTER),
+                new Note(Tone.A, Duration.WHOLE)
+            };
             // Play the song
-            Play(Mary);
+            Play(Smoke);
         }
 
         // Play the notes in a song. 
-        protected static void Play(Note[] tune)
+        public static void Play(Note[] tune)
         {
             foreach (Note n in tune)
             {

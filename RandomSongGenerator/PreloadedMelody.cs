@@ -9,7 +9,7 @@ namespace RandomSongGenerator
 {
     class PreloadedMelody
     {
-        public void PreloadedMelody()
+        public void PlaypreloadedMelody()
         {
             // Declare the first few notes of the song, "Mary Had A Little Lamb".
             Note[] Mary = 
@@ -40,8 +40,25 @@ namespace RandomSongGenerator
                 new Note(Tone.A, Duration.QUARTER),
                 new Note(Tone.GbelowC, Duration.WHOLE),
             };
+
+            Note[] Smoke = 
+            {
+                new Note(Tone.A, Duration.QUARTER),
+                new Note(Tone.C, Duration.QUARTER),
+                new Note(Tone.D, Duration.DOTTEDQUARTER),
+                new Note(Tone.A, Duration.QUARTER),
+                new Note(Tone.C, Duration.QUARTER),
+                new Note(Tone.Dsharp, Duration.EIGHTH),
+                new Note(Tone.D, Duration.HALF),
+                new Note(Tone.A, Duration.QUARTER),
+                new Note(Tone.C, Duration.QUARTER),
+                new Note(Tone.D, Duration.DOTTEDQUARTER),
+                new Note(Tone.C, Duration.QUARTER),
+                new Note(Tone.A, Duration.DOTTEDHALF),
+
+            };
             
-            Play(Mary);
+            Play(Smoke);
         }
 
         // Play the notes in a song. 
