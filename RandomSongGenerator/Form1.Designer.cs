@@ -39,9 +39,9 @@
             this.PlayButton.Name = "PlayButton";
             this.PlayButton.Size = new System.Drawing.Size(180, 77);
             this.PlayButton.TabIndex = 0;
-            this.PlayButton.Text = "Play Sound Foo!!!";
+            this.PlayButton.Text = "Play Mary...";
             this.PlayButton.UseVisualStyleBackColor = true;
-            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
+            this.PlayButton.Click += new System.EventHandler(this.PlayMaryButton);
             // 
             // button1
             // 
@@ -50,8 +50,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 92);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Randomize!!";
+            this.button1.Text = "Play Smoke...";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.PlaySmokeButton_Click);
             // 
             // Form1
             // 

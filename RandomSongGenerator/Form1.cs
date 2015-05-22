@@ -18,10 +18,16 @@ namespace RandomSongGenerator
     public partial class Form1 : Form
     {
         MelodyGenerator melodyGenerator = new MelodyGenerator();
+        Audioplayer audioPlayer = new Audioplayer();
         
         public Form1()
         {
             InitializeComponent();
+
+            //why are these tempoinputs not registering??
+            tempoInput.Maximum = Audioplayer.MAX_TEMPO; 
+            tempoInput.Minimum = Audioplayer.MIN_TEMPO; 
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,7 +36,7 @@ namespace RandomSongGenerator
         }
 
         
-        private void PlayButton_Click(object sender, EventArgs e)
+        private void PlayMaryButton(object sender, EventArgs e)
         {
             Scale septatonicScale1 = new Scale();
             septatonicScale1.noteCollection = new Tone[7];
@@ -41,11 +47,6 @@ namespace RandomSongGenerator
             septatonicScale1.noteCollection[4] = Tone.E;
             septatonicScale1.noteCollection[5] = Tone.F;
             septatonicScale1.noteCollection[6] = Tone.G;
-            
-            
-            melodyGenerator.PreloadedMelody();
-
-            
             
             /*
             //gotta add something for a test cmmit. 
@@ -76,6 +77,11 @@ namespace RandomSongGenerator
                 c.Play();
             }).Start();
              */ 
+        }
+
+        private void PlaySmokeButton_Click(object sender, EventArgs e)
+        {
+            audioPlayer.Play(PreloadedMelody.Mary, (int)tempoInput.value);
         }
 
         

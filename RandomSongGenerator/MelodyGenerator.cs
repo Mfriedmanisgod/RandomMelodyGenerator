@@ -10,71 +10,7 @@ namespace RandomSongGenerator
 {
     class MelodyGenerator
     {
-        public void PreloadedMelody()
-        {
-            // Declare the first few notes of the song, "Mary Had A Little Lamb".
-            Note[] Mary = 
-            {
         
-                new Note(Tone.B, Duration.DOTTEDHALF),
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.GbelowC, Duration.QUARTER),
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.B, Duration.QUARTER),
-                new Note(Tone.B, Duration.QUARTER),
-                new Note(Tone.B, Duration.HALF),
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.A, Duration.HALF),
-                new Note(Tone.B, Duration.QUARTER),
-                new Note(Tone.D, Duration.QUARTER),
-                new Note(Tone.D, Duration.HALF),
-                new Note(Tone.B, Duration.QUARTER),
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.GbelowC, Duration.QUARTER),
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.B, Duration.QUARTER),
-                new Note(Tone.B, Duration.QUARTER),
-                new Note(Tone.B, Duration.HALF),
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.B, Duration.QUARTER),
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.GbelowC, Duration.WHOLE),
-            };
-
-            Note[] Smoke = 
-            {
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.C, Duration.QUARTER),
-                new Note(Tone.D, Duration.DOTTEDQUARTER),
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.C, Duration.QUARTER),
-                new Note(Tone.Dsharp, Duration.EIGHTH),
-                new Note(Tone.D, Duration.HALF),
-                new Note(Tone.A, Duration.QUARTER),
-                new Note(Tone.C, Duration.QUARTER),
-                new Note(Tone.D, Duration.DOTTEDQUARTER),
-                new Note(Tone.C, Duration.QUARTER),
-                new Note(Tone.A, Duration.WHOLE)
-            };
-            // Play the song
-            Play(Smoke);
-        }
-
-        // Play the notes in a song. 
-        public static void Play(Note[] tune)
-        {
-            foreach (Note n in tune)
-            {
-                if (n.NoteTone == Tone.REST)
-                    Thread.Sleep((int)n.NoteDuration);
-                else
-                    Console.Beep((int)n.NoteTone, (int)n.NoteDuration);
-            }
-        }
     }
-
-
 }
 

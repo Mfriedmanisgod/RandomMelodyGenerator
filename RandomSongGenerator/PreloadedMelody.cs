@@ -7,12 +7,10 @@ using System.Threading;
 
 namespace RandomSongGenerator
 {
-    class PreloadedMelody
+    static class PreloadedMelody //why was this static??? and not just 'class preloaded..'???
     {
-        public void PlaypreloadedMelody()
-        {
-            // Declare the first few notes of the song, "Mary Had A Little Lamb".
-            Note[] Mary = 
+        
+            public static Note[] Mary = //why public static again???
             {
                 new Note(Tone.B, Duration.DOTTEDHALF),
                 new Note(Tone.A, Duration.QUARTER),
@@ -41,7 +39,7 @@ namespace RandomSongGenerator
                 new Note(Tone.GbelowC, Duration.WHOLE),
             };
 
-            Note[] Smoke = 
+            public static Note[] Smoke = 
             {
                 new Note(Tone.A, Duration.QUARTER),
                 new Note(Tone.C, Duration.QUARTER),
@@ -55,22 +53,7 @@ namespace RandomSongGenerator
                 new Note(Tone.D, Duration.DOTTEDQUARTER),
                 new Note(Tone.C, Duration.QUARTER),
                 new Note(Tone.A, Duration.DOTTEDHALF),
-
             };
-            
-            Play(Smoke);
-        }
-
-        // Play the notes in a song. 
-        public static void Play(Note[] tune)
-        {
-            foreach (Note n in tune)
-            {
-                if (n.NoteTone == Tone.REST)
-                    Thread.Sleep((int)n.NoteDuration);
-                else
-                    Console.Beep((int)n.NoteTone, (int)n.NoteDuration);
-            }
         }
     }
 }

@@ -8,6 +8,7 @@ namespace RandomSongGenerator
 {
     public enum Duration
     {
+        //DIFFERENCE between enum and float and int???
         WHOLE = 1600,
         HALF = WHOLE / 2,
         QUARTER = HALF / 2,
@@ -20,9 +21,5 @@ namespace RandomSongGenerator
         DOTTEDHALF = (int)(HALF * 1.5),
         DOTTEDQUARTER = (int)(QUARTER * 1.5),
         DOTTEDEIGHTH = (int)(EIGHTH * 1.5),
-
-
-
-        
     }
 }
