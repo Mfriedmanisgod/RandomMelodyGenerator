@@ -24,7 +24,6 @@ namespace RandomSongGenerator
         {
             InitializeComponent();
 
-            //why are these tempoinputs not registering??
             tempoInput.Maximum = Audioplayer.MAX_TEMPO; 
             tempoInput.Minimum = Audioplayer.MIN_TEMPO; 
 
@@ -38,15 +37,7 @@ namespace RandomSongGenerator
         
         private void PlayMaryButton(object sender, EventArgs e)
         {
-            Scale septatonicScale1 = new Scale();
-            septatonicScale1.noteCollection = new Tone[7];
-            septatonicScale1.noteCollection[0] = Tone.A;
-            septatonicScale1.noteCollection[1] = Tone.B;
-            septatonicScale1.noteCollection[2] = Tone.C;
-            septatonicScale1.noteCollection[3] = Tone.D; 
-            septatonicScale1.noteCollection[4] = Tone.E;
-            septatonicScale1.noteCollection[5] = Tone.F;
-            septatonicScale1.noteCollection[6] = Tone.G;
+            
             
             /*
             //gotta add something for a test cmmit. 
@@ -81,7 +72,40 @@ namespace RandomSongGenerator
 
         private void PlaySmokeButton_Click(object sender, EventArgs e)
         {
-            audioPlayer.Play(PreloadedMelody.Mary, (int)tempoInput.value);
+            audioPlayer.Play(PreloadedMelody.Mary, (int)tempoInput.Value);
+        }
+
+        private void PlaySeptatonicScale_Click(object sender, EventArgs e)
+        {
+            Scale a_Aeolien = RandomSongGenerator.Scale.GetAminorSeptatonicScale();
+
+            Note note1 = new Note(a_Aeolien.noteCollection[0], Duration.QUARTER);
+            Note note2 = new Note(a_Aeolien.noteCollection[1], Duration.QUARTER);
+            Note note3 = new Note(a_Aeolien.noteCollection[2], Duration.QUARTER);
+            Note note4 = new Note(a_Aeolien.noteCollection[3], Duration.QUARTER);
+            Note note5 = new Note(a_Aeolien.noteCollection[4], Duration.QUARTER);
+            Note note6 = new Note(a_Aeolien.noteCollection[5], Duration.QUARTER);
+            Note note7 = new Note(a_Aeolien.noteCollection[6], Duration.QUARTER);
+            Note note8 = new Note(a_Aeolien.noteCollection[7], Duration.QUARTER);
+
+            audioPlayer.Play(note1, (int)tempoInput.Value);
+            audioPlayer.Play(note2, (int)tempoInput.Value);
+            audioPlayer.Play(note3, (int)tempoInput.Value);
+            audioPlayer.Play(note4, (int)tempoInput.Value);
+            audioPlayer.Play(note5, (int)tempoInput.Value);
+            audioPlayer.Play(note6, (int)tempoInput.Value);
+            audioPlayer.Play(note7, (int)tempoInput.Value);
+            audioPlayer.Play(note8, (int)tempoInput.Value);
+
+        }
+
+        private void RandomButton_Click(object sender, EventArgs e)
+        {
+            while(true)
+            {
+                audioPlayer.Play(melodyGenerator.GetRandomNote(), (int)tempoInput.Value);
+            }
+            
         }
 
         

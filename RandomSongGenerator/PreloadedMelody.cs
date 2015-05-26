@@ -9,8 +9,8 @@ namespace RandomSongGenerator
 {
     static class PreloadedMelody //why was this static??? and not just 'class preloaded..'???
     {
-        
-            public static Note[] Mary = //why public static again???
+
+        public static Note[] Mary = //why public static again???
             {
                 new Note(Tone.B, Duration.DOTTEDHALF),
                 new Note(Tone.A, Duration.QUARTER),
@@ -39,7 +39,7 @@ namespace RandomSongGenerator
                 new Note(Tone.GbelowC, Duration.WHOLE),
             };
 
-            public static Note[] Smoke = 
+        public static Note[] Smoke = 
             {
                 new Note(Tone.A, Duration.QUARTER),
                 new Note(Tone.C, Duration.QUARTER),
@@ -54,6 +54,6 @@ namespace RandomSongGenerator
                 new Note(Tone.C, Duration.QUARTER),
                 new Note(Tone.A, Duration.DOTTEDHALF),
             };
-        }
     }
 }
+
