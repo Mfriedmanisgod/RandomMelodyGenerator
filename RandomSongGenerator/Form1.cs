@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Threading;
 
 
 
@@ -108,6 +109,15 @@ namespace RandomSongGenerator
             
         }
 
+        private void StopButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void Stop()
+        {
+            Thread.Sleep(0);
+        }
         
         
     }

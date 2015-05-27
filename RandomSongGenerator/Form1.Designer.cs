@@ -33,6 +33,7 @@
             this.tempoInput = new System.Windows.Forms.NumericUpDown();
             this.PlaySeptatonicScale = new System.Windows.Forms.Button();
             this.RandomButton = new System.Windows.Forms.Button();
+            this.StopButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tempoInput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,11 +87,22 @@
             this.RandomButton.UseVisualStyleBackColor = true;
             this.RandomButton.Click += new System.EventHandler(this.RandomButton_Click);
             // 
+            // StopButton
+            // 
+            this.StopButton.Location = new System.Drawing.Point(585, 236);
+            this.StopButton.Name = "StopButton";
+            this.StopButton.Size = new System.Drawing.Size(152, 92);
+            this.StopButton.TabIndex = 5;
+            this.StopButton.Text = "Stop";
+            this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 386);
+            this.Controls.Add(this.StopButton);
             this.Controls.Add(this.RandomButton);
             this.Controls.Add(this.PlaySeptatonicScale);
             this.Controls.Add(this.tempoInput);
@@ -111,6 +123,7 @@
         private System.Windows.Forms.NumericUpDown tempoInput;
         private System.Windows.Forms.Button PlaySeptatonicScale;
         private System.Windows.Forms.Button RandomButton;
+        private System.Windows.Forms.Button StopButton;
     }
 }
 

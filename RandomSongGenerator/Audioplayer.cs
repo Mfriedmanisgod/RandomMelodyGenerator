@@ -13,12 +13,12 @@ namespace RandomSongGenerator
 
         public const int MIN_TEMPO = 60;
 
-
         public void Play(Note[] tune, int tempo) 
          { 
              foreach (Note n in tune) 
              { 
                  Play(n, tempo); 
+
              } 
          } 
         
@@ -28,8 +28,14 @@ namespace RandomSongGenerator
                  Thread.Sleep(ConvertDuration(note.NoteDuration, tempo)); 
              else 
                  Console.Beep((int)note.NoteTone, ConvertDuration(note.NoteDuration, tempo)); 
-         } 
- 
+         }
+
+        //trying to create a stop method that functions with a stop button. i gotta learn more about threads.
+        public void Stop()
+        {
+            Thread.Sleep(0);
+        }
+
  /*
         public void Play(Note[] tune)
         {
