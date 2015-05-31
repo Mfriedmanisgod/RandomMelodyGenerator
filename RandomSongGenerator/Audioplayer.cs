@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Media;
 
 namespace RandomSongGenerator
 {
@@ -12,6 +13,8 @@ namespace RandomSongGenerator
         public const int MAX_TEMPO = 300;
 
         public const int MIN_TEMPO = 60;
+
+       
 
         public void Play(Note[] tune, int tempo) 
          { 
@@ -31,10 +34,7 @@ namespace RandomSongGenerator
          }
 
         //trying to create a stop method that functions with a stop button. i gotta learn more about threads.
-        public void Stop()
-        {
-            Thread.Sleep(0);
-        }
+       
 
  /*
         public void Play(Note[] tune)
