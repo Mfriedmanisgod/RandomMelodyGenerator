@@ -11,30 +11,34 @@ namespace RandomSongGenerator
     class MelodyGenerator
     {
         Random randomizer = new Random();
-
-        public Tone GetRandomTone()
+        Scale scale = new Scale();
+        
+        public Tone GetRandomTone(Scale s)
         {
-            int toneRand = randomizer.Next(0, 8);
-            Tone tone = Tone.REST;
-            switch (toneRand)
+            // get randomizer able to play random notes using the scale class as parameter. do not create any new methods-TODO
+            // 1 - this method should return a random note in aminorseptatonic.
+            //2 - this method should be able to return a note in any scale. 
+            //whoo hoo!! it plays an A note at random durations. now to get any note to work. 
+
+            int scaleRand = randomizer.Next(0, 1);
+            Tone scaleTone = Scale.GetAminorSeptatonicScale().noteCollection[0];
+            
+            switch(scaleRand)
             {
-                case 0: tone = Tone.REST; break;
-                case 1: tone = Tone.A; break;
-                case 2: tone = Tone.B; break;
-                case 3: tone = Tone.C; break;
-                case 4: tone = Tone.D; break;
-                case 5: tone = Tone.E; break;
-                case 6: tone = Tone.F; break;
-                case 7: tone = Tone.G; break;
-                case 8: tone = Tone.A2; break;
+
+                case 0: scale = null; break;
+                case 1:
+                    {
+                        s = Scale.GetAminorSeptatonicScale();
+                    }
+                    break;
             }
 
-            return tone;
+            return scaleTone;
         }
 
         public Duration GetRandomDuration()
         {
-            // next step is to get the duration values to randomize too. 
             int durRand = randomizer.Next(0, 11);
             Duration duration = Duration.WHOLE;
             switch (durRand)
@@ -57,10 +61,12 @@ namespace RandomSongGenerator
         }
 
         public Note GetRandomNote() 
-         { 
-             Tone tone = GetRandomTone(); 
+         {
+              
+             Tone tone = GetRandomTone(scale); 
              Duration duration = GetRandomDuration(); 
-             Note note = new Note(tone, duration); 
+             Note note = new Note(tone, duration);
+             
              return note; 
          } 
 

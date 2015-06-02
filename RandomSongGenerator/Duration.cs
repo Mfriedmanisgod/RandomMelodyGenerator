@@ -21,5 +21,6 @@ namespace RandomSongGenerator
         DOTTEDHALF = (int)(HALF * 1.5),
         DOTTEDQUARTER = (int)(QUARTER * 1.5),
         DOTTEDEIGHTH = (int)(EIGHTH * 1.5),
+        REST = 0
     }
 }

@@ -111,7 +111,7 @@ namespace RandomSongGenerator
 
         private void StopButton_Click(object sender, EventArgs e)
         {
-            Stop();
+            
         }
 
         

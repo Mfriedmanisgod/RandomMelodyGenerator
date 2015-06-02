@@ -10,7 +10,7 @@ namespace RandomSongGenerator
     static class PreloadedMelody //why was this static??? and not just 'class preloaded..'???
     {
 
-        public static Note[] Mary = //why public static again???
+        public static Note[] Mary = 
             {
                 new Note(Tone.B, Duration.DOTTEDHALF),
                 new Note(Tone.A, Duration.QUARTER),

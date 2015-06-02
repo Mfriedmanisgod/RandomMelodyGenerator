@@ -10,9 +10,6 @@ namespace RandomSongGenerator
     {
         public Tone[] noteCollection { get; set; }
 
-        //why does this scale not function in its own class??
-        
-        
         public static Scale GetAminorSeptatonicScale()
         {
             Scale septatonicScale1 = new Scale();
