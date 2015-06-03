@@ -20,10 +20,11 @@ namespace RandomSongGenerator
             //2 - this method should be able to return a note in any scale. 
             //whoo hoo!! it plays an A note at random durations. now to get any note to work. 
 
-            int scaleRand = randomizer.Next(0, 1);
-            Tone scaleTone = Scale.GetAminorSeptatonicScale().noteCollection[0];
-            
-            switch(scaleRand)
+            int randomNote = randomizer.Next(0, 7);
+            Tone scaleTone = Scale.GetAminorSeptatonicScale().noteCollection[randomNote];
+            int randomScenario = randomizer.Next(0, 1);
+
+            switch(randomScenario)
             {
 
                 case 0: scale = null; break;
@@ -35,6 +36,7 @@ namespace RandomSongGenerator
             }
 
             return scaleTone;
+            
         }
 
         public Duration GetRandomDuration()
