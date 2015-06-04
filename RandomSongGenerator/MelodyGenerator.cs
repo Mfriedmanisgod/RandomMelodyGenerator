@@ -22,7 +22,7 @@ namespace RandomSongGenerator
 
             int randomNote = randomizer.Next(0, 7);
             Tone scaleTone = Scale.GetAminorSeptatonicScale().noteCollection[randomNote];
-            int randomScenario = randomizer.Next(0, 1);
+            int randomScenario = randomizer.Next(0, 2);
 
             switch(randomScenario)
             {
@@ -31,6 +31,11 @@ namespace RandomSongGenerator
                 case 1:
                     {
                         s = Scale.GetAminorSeptatonicScale();
+                    }
+                    break;
+                case 2:
+                    {
+                        s = Scale.GetAmajorSeptatonicScale();
                     }
                     break;
             }

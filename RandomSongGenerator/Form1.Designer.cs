@@ -34,6 +34,7 @@
             this.PlaySeptatonicScale = new System.Windows.Forms.Button();
             this.RandomButton = new System.Windows.Forms.Button();
             this.StopButton = new System.Windows.Forms.Button();
+            this.ScaleOptions = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.tempoInput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,11 +98,21 @@
             this.StopButton.UseVisualStyleBackColor = true;
             this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
+            // ScaleOptions
+            // 
+            this.ScaleOptions.FormattingEnabled = true;
+            this.ScaleOptions.Location = new System.Drawing.Point(561, 40);
+            this.ScaleOptions.Name = "ScaleOptions";
+            this.ScaleOptions.Size = new System.Drawing.Size(120, 17);
+            this.ScaleOptions.TabIndex = 6;
+            this.ScaleOptions.SelectedIndexChanged += new System.EventHandler(this.ScaleOptions_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 386);
+            this.Controls.Add(this.ScaleOptions);
             this.Controls.Add(this.StopButton);
             this.Controls.Add(this.RandomButton);
             this.Controls.Add(this.PlaySeptatonicScale);
@@ -124,6 +135,7 @@
         private System.Windows.Forms.Button PlaySeptatonicScale;
         private System.Windows.Forms.Button RandomButton;
         private System.Windows.Forms.Button StopButton;
+        private System.Windows.Forms.ListBox ScaleOptions;
     }
 }
 

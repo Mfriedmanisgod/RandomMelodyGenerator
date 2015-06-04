@@ -114,6 +114,14 @@ namespace RandomSongGenerator
             
         }
 
+        private void ScaleOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            while(true)
+            {
+                
+            }
+        }
+
         
 
         
