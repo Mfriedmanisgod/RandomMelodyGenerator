@@ -20,6 +20,8 @@ namespace RandomSongGenerator
     {
         MelodyGenerator melodyGenerator = new MelodyGenerator();
         Audioplayer audioPlayer = new Audioplayer();
+        List<Scale> scaleChoicesList = new List<Scale>();
+        Scale scale = new Scale();
         
         public Form1()
         {
@@ -38,8 +40,6 @@ namespace RandomSongGenerator
         
         private void PlayMaryButton(object sender, EventArgs e)
         {
-            
-            
             /*
             //gotta add something for a test cmmit. 
             var p1 = new System.Media.Windows.MediaPlayer();
@@ -114,13 +114,24 @@ namespace RandomSongGenerator
             
         }
 
-        private void ScaleOptions_SelectedIndexChanged(object sender, EventArgs e)
+        private void ScaleOptionsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            while(true)
-            {
-                
-            }
+            AddScaleToList(scaleChoicesList, RandomSongGenerator.Scale.GetA_DorianSeptatonicScale());
+            AddScaleToList(scaleChoicesList, RandomSongGenerator.Scale.GetAmajorSeptatonicScale());
+            AddScaleToList(scaleChoicesList, RandomSongGenerator.Scale.GetAminorSeptatonicScale());
+            AddScaleToList(scaleChoicesList, RandomSongGenerator.Scale.GetAminorPentatonicScale());
+            
+            //ScaleOptionsList_SelectedIndexChanged.Text = scaleChoicesList.ToString();
+            
+
+
+            
         }
+
+        private void AddScaleToList(List<Scale> list, Scale scaleToAdd)
+        {
+            list.Add(scaleToAdd);
+        }      
 
         
 

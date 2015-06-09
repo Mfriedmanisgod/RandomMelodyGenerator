@@ -44,6 +44,39 @@ namespace RandomSongGenerator
             return septatonicScale2;
         }
 
+        public static Scale GetA_DorianSeptatonicScale()
+        {
+            Scale septatonicScale3 = new Scale();
+
+            septatonicScale3.noteCollection = new Tone[8];
+            septatonicScale3.noteCollection[0] = Tone.A;
+            septatonicScale3.noteCollection[1] = Tone.B;
+            septatonicScale3.noteCollection[2] = Tone.Csharp;
+            septatonicScale3.noteCollection[3] = Tone.D;
+            septatonicScale3.noteCollection[4] = Tone.E;
+            septatonicScale3.noteCollection[5] = Tone.Fsharp;
+            septatonicScale3.noteCollection[6] = Tone.G;
+            septatonicScale3.noteCollection[7] = Tone.A2;
+
+            return septatonicScale3;
+        }
+
+        public static Scale GetAminorPentatonicScale()
+        {
+            Scale pentatonicScale = new Scale();
+
+            pentatonicScale.noteCollection = new Tone[6];
+            pentatonicScale.noteCollection[0] = Tone.A;
+            pentatonicScale.noteCollection[1] = Tone.C;
+            pentatonicScale.noteCollection[2] = Tone.D;
+            pentatonicScale.noteCollection[3] = Tone.E;
+            pentatonicScale.noteCollection[4] = Tone.G;
+            pentatonicScale.noteCollection[5] = Tone.A2;
+
+            return pentatonicScale;
+        }
+
+
         
     }
 }

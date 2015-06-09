@@ -35,6 +35,7 @@ namespace RandomSongGenerator
                     break;
                 case 2:
                     {
+                        scaleTone = Scale.GetAmajorSeptatonicScale().noteCollection[randomNote];
                         s = Scale.GetAmajorSeptatonicScale();
                     }
                     break;
@@ -55,6 +56,7 @@ namespace RandomSongGenerator
                 case 2: duration = Duration.QUARTER; break;
                 case 3: duration = Duration.EIGHTH; break; 
                 case 4: duration = Duration.SIXTEENTH; break;
+                /*
                 case 5: duration = Duration.HALFTRIPLET; break;
                 case 6: duration = Duration.QUARTERTRIPLET; break;
                 case 7: duration = Duration.EIGHTHTRIPLET; break;
@@ -62,6 +64,7 @@ namespace RandomSongGenerator
                 case 9: duration = Duration.DOTTEDHALF; break;
                 case 10: duration = Duration.DOTTEDQUARTER; break;
                 case 11: duration = Duration.DOTTEDEIGHTH; break;
+                 */ 
             }
 
             return duration;

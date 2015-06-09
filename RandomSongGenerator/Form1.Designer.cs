@@ -103,9 +103,9 @@
             this.ScaleOptions.FormattingEnabled = true;
             this.ScaleOptions.Location = new System.Drawing.Point(561, 40);
             this.ScaleOptions.Name = "ScaleOptions";
-            this.ScaleOptions.Size = new System.Drawing.Size(120, 17);
+            this.ScaleOptions.Size = new System.Drawing.Size(120, 108);
             this.ScaleOptions.TabIndex = 6;
-            this.ScaleOptions.SelectedIndexChanged += new System.EventHandler(this.ScaleOptions_SelectedIndexChanged);
+            this.ScaleOptions.SelectedIndexChanged += new System.EventHandler(this.ScaleOptionsList_SelectedIndexChanged);
             // 
             // Form1
             // 
