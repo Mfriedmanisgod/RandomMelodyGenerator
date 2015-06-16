@@ -22,14 +22,34 @@ namespace RandomSongGenerator
         Audioplayer audioPlayer = new Audioplayer();
         List<Scale> scaleChoicesList = new List<Scale>();
         Scale scale = new Scale();
+
+        List<string> stringList = new List<string>();
+        
         
         public Form1()
         {
             InitializeComponent();
 
-            tempoInput.Maximum = Audioplayer.MAX_TEMPO; 
-            tempoInput.Minimum = Audioplayer.MIN_TEMPO; 
+            string a_Aeolien = RandomSongGenerator.Scale.GetAminorSeptatonicScale().ToString();
+            string a_Dorian = RandomSongGenerator.Scale.GetA_DorianSeptatonicScale().ToString();
+            string a_Ionian = RandomSongGenerator.Scale.GetAmajorSeptatonicScale().ToString();
+            string a_MinorPentatonic = RandomSongGenerator.Scale.GetAminorPentatonicScale().ToString();
 
+            a_Aeolien = "A Aeolien";
+            a_Dorian = "A Dorian";
+            a_Ionian = "A Ionian";
+            a_MinorPentatonic = "A Minor Pentatonic";
+
+            stringList.Add(a_Aeolien);
+            stringList.Add(a_Dorian);
+            stringList.Add(a_MinorPentatonic);
+            stringList.Add(a_Ionian);
+           
+            ScaleOptions.DataSource = stringList;
+            ScaleOptions.Text = stringList.ToString();
+ 
+            tempoInput.Maximum = Audioplayer.MAX_TEMPO;
+            tempoInput.Minimum = Audioplayer.MIN_TEMPO; 
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -68,12 +88,13 @@ namespace RandomSongGenerator
                 c.Open(new System.Uri(@"C:\users\katherine\desktop\solo.wav"));
                 c.Play();
             }).Start();
-             */ 
+             */
+            audioPlayer.Play(PreloadedMelody.Mary, (int)tempoInput.Value);
         }
 
         private void PlaySmokeButton_Click(object sender, EventArgs e)
         {
-            audioPlayer.Play(PreloadedMelody.Mary, (int)tempoInput.Value);
+            audioPlayer.Play(PreloadedMelody.Smoke, (int)tempoInput.Value);
         }
 
         private void PlaySeptatonicScale_Click(object sender, EventArgs e)
@@ -114,28 +135,5 @@ namespace RandomSongGenerator
             
         }
 
-        private void ScaleOptionsList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            AddScaleToList(scaleChoicesList, RandomSongGenerator.Scale.GetA_DorianSeptatonicScale());
-            AddScaleToList(scaleChoicesList, RandomSongGenerator.Scale.GetAmajorSeptatonicScale());
-            AddScaleToList(scaleChoicesList, RandomSongGenerator.Scale.GetAminorSeptatonicScale());
-            AddScaleToList(scaleChoicesList, RandomSongGenerator.Scale.GetAminorPentatonicScale());
-            
-            //ScaleOptionsList_SelectedIndexChanged.Text = scaleChoicesList.ToString();
-            
-
-
-            
-        }
-
-        private void AddScaleToList(List<Scale> list, Scale scaleToAdd)
-        {
-            list.Add(scaleToAdd);
-        }      
-
-        
-
-        
-        
     }
 }

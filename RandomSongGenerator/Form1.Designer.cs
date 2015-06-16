@@ -43,7 +43,7 @@
             this.PlayButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayButton.Location = new System.Drawing.Point(68, 40);
             this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(180, 77);
+            this.PlayButton.Size = new System.Drawing.Size(121, 38);
             this.PlayButton.TabIndex = 0;
             this.PlayButton.Text = "Play Mary...";
             this.PlayButton.UseVisualStyleBackColor = true;
@@ -52,9 +52,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(68, 236);
+            this.button1.Location = new System.Drawing.Point(68, 91);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 92);
+            this.button1.Size = new System.Drawing.Size(121, 57);
             this.button1.TabIndex = 1;
             this.button1.Text = "Play Smoke...";
             this.button1.UseVisualStyleBackColor = true;
@@ -62,16 +62,16 @@
             // 
             // tempoInput
             // 
-            this.tempoInput.Location = new System.Drawing.Point(359, 40);
+            this.tempoInput.Location = new System.Drawing.Point(253, 40);
             this.tempoInput.Name = "tempoInput";
             this.tempoInput.Size = new System.Drawing.Size(120, 20);
             this.tempoInput.TabIndex = 2;
             // 
             // PlaySeptatonicScale
             // 
-            this.PlaySeptatonicScale.Location = new System.Drawing.Point(350, 160);
+            this.PlaySeptatonicScale.Location = new System.Drawing.Point(68, 180);
             this.PlaySeptatonicScale.Name = "PlaySeptatonicScale";
-            this.PlaySeptatonicScale.Size = new System.Drawing.Size(75, 23);
+            this.PlaySeptatonicScale.Size = new System.Drawing.Size(121, 32);
             this.PlaySeptatonicScale.TabIndex = 3;
             this.PlaySeptatonicScale.Text = "PlayScale";
             this.PlaySeptatonicScale.UseVisualStyleBackColor = true;
@@ -80,9 +80,9 @@
             // RandomButton
             // 
             this.RandomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RandomButton.Location = new System.Drawing.Point(350, 236);
+            this.RandomButton.Location = new System.Drawing.Point(68, 236);
             this.RandomButton.Name = "RandomButton";
-            this.RandomButton.Size = new System.Drawing.Size(160, 92);
+            this.RandomButton.Size = new System.Drawing.Size(145, 35);
             this.RandomButton.TabIndex = 4;
             this.RandomButton.Text = "Scale randomized";
             this.RandomButton.UseVisualStyleBackColor = true;
@@ -101,11 +101,10 @@
             // ScaleOptions
             // 
             this.ScaleOptions.FormattingEnabled = true;
-            this.ScaleOptions.Location = new System.Drawing.Point(561, 40);
+            this.ScaleOptions.Location = new System.Drawing.Point(389, 40);
             this.ScaleOptions.Name = "ScaleOptions";
-            this.ScaleOptions.Size = new System.Drawing.Size(120, 108);
+            this.ScaleOptions.Size = new System.Drawing.Size(419, 108);
             this.ScaleOptions.TabIndex = 6;
-            this.ScaleOptions.SelectedIndexChanged += new System.EventHandler(this.ScaleOptionsList_SelectedIndexChanged);
             // 
             // Form1
             // 
