@@ -99,8 +99,11 @@ namespace RandomSongGenerator
 
         private void PlaySeptatonicScale_Click(object sender, EventArgs e)
         {
+            int selectedIndex = ScaleOptions.SelectedIndex;
             Scale a_Aeolien = RandomSongGenerator.Scale.GetAminorSeptatonicScale();
 
+            audioPlayer.Play(RandomSongGenerator.Scale.GetAmajorSeptatonicScale, selectedIndex);
+            
             Note note1 = new Note(a_Aeolien.noteCollection[0], Duration.QUARTER);
             Note note2 = new Note(a_Aeolien.noteCollection[1], Duration.QUARTER);
             Note note3 = new Note(a_Aeolien.noteCollection[2], Duration.QUARTER);

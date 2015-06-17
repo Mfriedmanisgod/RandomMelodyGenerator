@@ -15,14 +15,9 @@ namespace RandomSongGenerator
         
         public Tone GetRandomTone(Scale s)
         {
-            // get randomizer able to play random notes using the scale class as parameter. do not create any new methods-TODO
-            // 1 - this method should return a random note in aminorseptatonic.
-            //2 - this method should be able to return a note in any scale. 
-            //whoo hoo!! it plays an A note at random durations. now to get any note to work. 
-
             int randomNote = randomizer.Next(0, 7);
             Tone scaleTone = Scale.GetAminorSeptatonicScale().noteCollection[randomNote];
-            int randomScenario = randomizer.Next(0, 2);
+            int randomScenario = randomizer.Next(0, 1);
 
             switch(randomScenario)
             {
@@ -31,12 +26,6 @@ namespace RandomSongGenerator
                 case 1:
                     {
                         s = Scale.GetAminorSeptatonicScale();
-                    }
-                    break;
-                case 2:
-                    {
-                        scaleTone = Scale.GetAmajorSeptatonicScale().noteCollection[randomNote];
-                        s = Scale.GetAmajorSeptatonicScale();
                     }
                     break;
             }
