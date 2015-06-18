@@ -35,6 +35,7 @@
             this.RandomButton = new System.Windows.Forms.Button();
             this.StopButton = new System.Windows.Forms.Button();
             this.ScaleOptions = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tempoInput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,11 +107,21 @@
             this.ScaleOptions.Size = new System.Drawing.Size(419, 108);
             this.ScaleOptions.TabIndex = 6;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(386, 180);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ChosenScale";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 386);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ScaleOptions);
             this.Controls.Add(this.StopButton);
             this.Controls.Add(this.RandomButton);
@@ -123,6 +134,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tempoInput)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -135,6 +147,7 @@
         private System.Windows.Forms.Button RandomButton;
         private System.Windows.Forms.Button StopButton;
         private System.Windows.Forms.ListBox ScaleOptions;
+        private System.Windows.Forms.Label label1;
     }
 }
 

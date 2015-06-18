@@ -21,10 +21,9 @@ namespace RandomSongGenerator
         MelodyGenerator melodyGenerator = new MelodyGenerator();
         Audioplayer audioPlayer = new Audioplayer();
         List<Scale> scaleChoicesList = new List<Scale>();
-        Scale scale = new Scale();
-
         List<string> stringList = new List<string>();
-        
+        Scale scale = new Scale();
+        //int selectedIndex;
         
         public Form1()
         {
@@ -57,38 +56,8 @@ namespace RandomSongGenerator
 
         }
 
-        
         private void PlayMaryButton(object sender, EventArgs e)
         {
-            /*
-            //gotta add something for a test cmmit. 
-            var p1 = new System.Media.Windows.MediaPlayer();
-            p1.Open(new System.Uri(@"C:\windows\media\tada.wav"));
-            p1.Play();
-
-            // this sleep is here just so you can distinguish the two sounds playing simultaneously
-            //System.Threading.Thread.Sleep(500);
-
-            var p2 = new System.Windows.Media.MediaPlayer();
-            p2.Open(new System.Uri(@"C:\windows\media\tada.wav"));
-            p2.Play();
-
-            new System.Threading.Thread(() =>
-            {
-                var c = new System.Windows.Media.MediaPlayer();
-                c.Open(new System.Uri(@"C:\users\katherine\desktop\solo.wav"));
-                c.Play();
-            }).Start();
-
-            System.Threading.Thread.Sleep(500);
-
-            new System.Threading.Thread(() =>
-            {
-                var c = new System.Windows.Media.MediaPlayer();
-                c.Open(new System.Uri(@"C:\users\katherine\desktop\solo.wav"));
-                c.Play();
-            }).Start();
-             */
             audioPlayer.Play(PreloadedMelody.Mary, (int)tempoInput.Value);
         }
 
@@ -99,11 +68,8 @@ namespace RandomSongGenerator
 
         private void PlaySeptatonicScale_Click(object sender, EventArgs e)
         {
-            int selectedIndex = ScaleOptions.SelectedIndex;
             Scale a_Aeolien = RandomSongGenerator.Scale.GetAminorSeptatonicScale();
 
-            audioPlayer.Play(RandomSongGenerator.Scale.GetAmajorSeptatonicScale, selectedIndex);
-            
             Note note1 = new Note(a_Aeolien.noteCollection[0], Duration.QUARTER);
             Note note2 = new Note(a_Aeolien.noteCollection[1], Duration.QUARTER);
             Note note3 = new Note(a_Aeolien.noteCollection[2], Duration.QUARTER);
@@ -121,7 +87,6 @@ namespace RandomSongGenerator
             audioPlayer.Play(note6, (int)tempoInput.Value);
             audioPlayer.Play(note7, (int)tempoInput.Value);
             audioPlayer.Play(note8, (int)tempoInput.Value);
-
         }
 
         private void RandomButton_Click(object sender, EventArgs e)
@@ -132,10 +97,16 @@ namespace RandomSongGenerator
             }
             
         }
-
+        
         private void StopButton_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void DisplayChosenScale(int selectedIndex)
+        {
+            selectedIndex = ScaleOptions.SelectedIndex;
+            label1.Text = selectedIndex.ToString();
         }
 
     }
