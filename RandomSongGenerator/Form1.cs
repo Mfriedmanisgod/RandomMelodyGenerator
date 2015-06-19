@@ -23,7 +23,6 @@ namespace RandomSongGenerator
         List<Scale> scaleChoicesList = new List<Scale>();
         List<string> stringList = new List<string>();
         Scale scale = new Scale();
-        //int selectedIndex;
         
         public Form1()
         {
@@ -103,10 +102,18 @@ namespace RandomSongGenerator
             
         }
 
-        private void DisplayChosenScale(int selectedIndex)
+        private void ScaleOptions_DoubleClick(object sender, EventArgs e)
         {
-            selectedIndex = ScaleOptions.SelectedIndex;
-            label1.Text = selectedIndex.ToString();
+            try
+            {
+                int selectedIndex = ScaleOptions.SelectedIndex;
+                label1.Text = stringList[selectedIndex].ToString();
+            }
+            catch
+            {
+
+            }
+            
         }
 
     }

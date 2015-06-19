@@ -106,6 +106,7 @@
             this.ScaleOptions.Name = "ScaleOptions";
             this.ScaleOptions.Size = new System.Drawing.Size(419, 108);
             this.ScaleOptions.TabIndex = 6;
+            this.ScaleOptions.DoubleClick += new System.EventHandler(this.ScaleOptions_DoubleClick);
             // 
             // label1
             // 
