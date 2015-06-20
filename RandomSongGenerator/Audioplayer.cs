@@ -11,10 +11,7 @@ namespace RandomSongGenerator
     class Audioplayer
     {
         public const int MAX_TEMPO = 300;
-
         public const int MIN_TEMPO = 60;
-
-
 
         public void Play(Note[] tune, int tempo)
         {

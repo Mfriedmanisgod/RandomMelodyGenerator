@@ -13,25 +13,23 @@ namespace RandomSongGenerator
         Random randomizer = new Random();
         Scale scale = new Scale();
         
+        /// <summary>
+        /// getrandomtone will accept whatever scale is in parenthesis as the parameter and get a random tone at 50%. will also rest at 50%
+        /// </summary>
+        /// <param name="s">s = scale i set as parameter</param> 
+        /// <returns> returns one random scale tone from within the scale</returns>
         public Tone GetRandomTone(Scale s)
         {
             int randomNote = randomizer.Next(0, 7);
-            Tone scaleTone = Scale.GetAminorSeptatonicScale().noteCollection[randomNote];
-            int randomScenario = randomizer.Next(0, 1);
-
-            switch(randomScenario)
+            Tone scaleTone = s.noteCollection[randomNote];
+            int randomScenario = randomizer.Next(0, 100);
+            
+            if (randomScenario == 0)
             {
-
-                case 0: scale = null; break;
-                case 1:
-                    {
-                        s = Scale.GetAminorSeptatonicScale();
-                    }
-                    break;
+                scaleTone = Tone.REST; 
             }
 
             return scaleTone;
-            
         }
 
         public Duration GetRandomDuration()
@@ -59,10 +57,10 @@ namespace RandomSongGenerator
             return duration;
         }
 
-        public Note GetRandomNote() 
+        public Note GetRandomNote(Scale scaleChoice) 
          {
               
-             Tone tone = GetRandomTone(scale); 
+             Tone tone = GetRandomTone(scaleChoice); 
              Duration duration = GetRandomDuration(); 
              Note note = new Note(tone, duration);
              

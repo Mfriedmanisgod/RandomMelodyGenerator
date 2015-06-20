@@ -92,7 +92,7 @@ namespace RandomSongGenerator
         {
             while(true)
             {
-                audioPlayer.Play(melodyGenerator.GetRandomNote(), (int)tempoInput.Value);
+                audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAmajorSeptatonicScale()), (int)tempoInput.Value);
             }
             
         }
@@ -111,7 +111,6 @@ namespace RandomSongGenerator
             }
             catch
             {
-
             }
             
         }
