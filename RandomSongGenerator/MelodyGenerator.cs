@@ -22,7 +22,7 @@ namespace RandomSongGenerator
         {
             int randomNote = randomizer.Next(0, 7);
             Tone scaleTone = s.noteCollection[randomNote];
-            int randomScenario = randomizer.Next(0, 100);
+            int randomScenario = randomizer.Next(0, 10);
             
             if (randomScenario == 0)
             {

@@ -92,7 +92,27 @@ namespace RandomSongGenerator
         {
             while(true)
             {
-                audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAmajorSeptatonicScale()), (int)tempoInput.Value);
+                int selectedIndex = ScaleOptions.SelectedIndex;
+                label1.Text = stringList[selectedIndex].ToString();
+
+                if (label1.Text == "A Aeolien")
+                {
+                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorSeptatonicScale()), (int)tempoInput.Value);
+                }
+                if (label1.Text == "A Ionian")
+                {
+                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAmajorSeptatonicScale()), (int)tempoInput.Value);
+                }
+                if (label1.Text == "A Dorian")
+                {
+                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetA_DorianSeptatonicScale()), (int)tempoInput.Value);
+                }
+                if (label1.Text == "A Minor Pentatonic")
+                {
+                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorPentatonicScale()), (int)tempoInput.Value);
+                }
+                
+                //audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAmajorSeptatonicScale()), (int)tempoInput.Value);
             }
             
         }
