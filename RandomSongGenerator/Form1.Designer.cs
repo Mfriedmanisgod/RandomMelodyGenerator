@@ -76,7 +76,7 @@
             this.PlaySeptatonicScale.TabIndex = 3;
             this.PlaySeptatonicScale.Text = "PlayScale";
             this.PlaySeptatonicScale.UseVisualStyleBackColor = true;
-            this.PlaySeptatonicScale.Click += new System.EventHandler(this.PlaySeptatonicScale_Click);
+            this.PlaySeptatonicScale.Click += new System.EventHandler(this.PlayScale_Click);
             // 
             // RandomButton
             // 

@@ -54,6 +54,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="MelodyGenerator.cs" />
+    <Compile Include="PianoForm.cs" />
     <Compile Include="PreloadedMelody.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

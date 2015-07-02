@@ -65,7 +65,7 @@ namespace RandomSongGenerator
             audioPlayer.Play(PreloadedMelody.Smoke, (int)tempoInput.Value);
         }
 
-        private void PlaySeptatonicScale_Click(object sender, EventArgs e)
+        private void PlayScale_Click(object sender, EventArgs e)
         {
             Scale a_Aeolien = RandomSongGenerator.Scale.GetAminorSeptatonicScale();
 
@@ -111,8 +111,6 @@ namespace RandomSongGenerator
                 {
                     audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorPentatonicScale()), (int)tempoInput.Value);
                 }
-                
-                //audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAmajorSeptatonicScale()), (int)tempoInput.Value);
             }
             
         }
@@ -131,9 +129,13 @@ namespace RandomSongGenerator
             }
             catch
             {
+                //http://www.c-sharpcorner.com/UploadFile/mike4/DotNetPiano11122005012432AM/DotNetPiano.aspx
+                //http://www.codeproject.com/Articles/6165/A-Piano-Key-Control-in-C
             }
             
         }
+
+        
 
     }
 }
