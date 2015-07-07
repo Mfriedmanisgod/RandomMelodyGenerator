@@ -80,7 +80,7 @@ namespace RandomSongGenerator
         {
             Scale chromaticScale = new Scale();
 
-            chromaticScale.noteCollection = new Tone[8];
+            chromaticScale.noteCollection = new Tone[13];
             chromaticScale.noteCollection[0] = Tone.A;
             chromaticScale.noteCollection[1] = Tone.Asharp;
             chromaticScale.noteCollection[2] = Tone.B;

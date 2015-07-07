@@ -23,6 +23,7 @@ namespace RandomSongGenerator
         List<Scale> scaleChoicesList = new List<Scale>();
         List<string> stringList = new List<string>();
         Scale scale = new Scale();
+        int hour, min, sec, ms = 0;
         
         public Form1()
         {
@@ -32,22 +33,37 @@ namespace RandomSongGenerator
             string a_Dorian = RandomSongGenerator.Scale.GetA_DorianSeptatonicScale().ToString();
             string a_Ionian = RandomSongGenerator.Scale.GetAmajorSeptatonicScale().ToString();
             string a_MinorPentatonic = RandomSongGenerator.Scale.GetAminorPentatonicScale().ToString();
+            string a_Chromatic = RandomSongGenerator.Scale.GetA_chromaticScale().ToString();
 
             a_Aeolien = "A Aeolien";
             a_Dorian = "A Dorian";
             a_Ionian = "A Ionian";
             a_MinorPentatonic = "A Minor Pentatonic";
+            a_Chromatic = "A Chromatic";
 
             stringList.Add(a_Aeolien);
             stringList.Add(a_Dorian);
             stringList.Add(a_MinorPentatonic);
             stringList.Add(a_Ionian);
+            stringList.Add(a_Chromatic);
            
             ScaleOptions.DataSource = stringList;
             ScaleOptions.Text = stringList.ToString();
  
             tempoInput.Maximum = Audioplayer.MAX_TEMPO;
             tempoInput.Minimum = Audioplayer.MIN_TEMPO; 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DisplayTimer(label2);
+            sec++;
+
+            if (sec == 60)
+            {
+                min++;
+                sec = 0;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -94,6 +110,7 @@ namespace RandomSongGenerator
             {
                 int selectedIndex = ScaleOptions.SelectedIndex;
                 label1.Text = stringList[selectedIndex].ToString();
+                timer1.Start();
 
                 if (label1.Text == "A Aeolien")
                 {
@@ -111,7 +128,12 @@ namespace RandomSongGenerator
                 {
                     audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorPentatonicScale()), (int)tempoInput.Value);
                 }
-            }
+                if (label1.Text == "A Chromatic")
+                {
+                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetA_chromaticScale()), (int)tempoInput.Value);
+                }
+                
+             }
             
         }
         
@@ -133,6 +155,11 @@ namespace RandomSongGenerator
                 //http://www.codeproject.com/Articles/6165/A-Piano-Key-Control-in-C
             }
             
+        }
+
+        private void DisplayTimer(Label timerDisplay)
+        {
+            timerDisplay.Text = min + ":" + sec.ToString();
         }
 
         

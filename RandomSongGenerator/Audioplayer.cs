@@ -12,12 +12,15 @@ namespace RandomSongGenerator
     {
         public const int MAX_TEMPO = 300;
         public const int MIN_TEMPO = 60;
+        
 
         public void Play(Note[] tune, int tempo)
         {
             foreach (Note n in tune)
             {
                 Play(n, tempo);
+
+                
 
             }
         }
@@ -33,18 +36,6 @@ namespace RandomSongGenerator
                 Console.Beep((int)note.NoteTone, ConvertDuration(note.NoteDuration, tempo));
             }
         }
-
-        public void PlayScale(Scale scale, int tempo)
-        {
-            //foreach (Note n in scale)
-            {
-                //Play(n, tempo);
-            }
-        }
-
-        //trying to create a stop method that functions with a stop button. i gotta learn more about threads.
-
-
 
         public void Play(Note[] tune)
         {
