@@ -23,7 +23,6 @@ namespace RandomSongGenerator
         List<Scale> scaleChoicesList = new List<Scale>();
         List<string> stringList = new List<string>();
         Scale scale = new Scale();
-        int hour, min, sec, ms = 0;
         
         public Form1()
         {
@@ -53,6 +52,7 @@ namespace RandomSongGenerator
             tempoInput.Maximum = Audioplayer.MAX_TEMPO;
             tempoInput.Minimum = Audioplayer.MIN_TEMPO; 
         }
+        int min, sec = 0;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -110,11 +110,11 @@ namespace RandomSongGenerator
             {
                 int selectedIndex = ScaleOptions.SelectedIndex;
                 label1.Text = stringList[selectedIndex].ToString();
-                timer1.Start();
-
+                
                 if (label1.Text == "A Aeolien")
                 {
                     audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorSeptatonicScale()), (int)tempoInput.Value);
+                    timer1.Start();
                 }
                 if (label1.Text == "A Ionian")
                 {
