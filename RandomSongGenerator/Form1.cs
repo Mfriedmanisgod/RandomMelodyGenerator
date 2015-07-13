@@ -52,13 +52,18 @@ namespace RandomSongGenerator
             tempoInput.Maximum = Audioplayer.MAX_TEMPO;
             tempoInput.Minimum = Audioplayer.MIN_TEMPO; 
         }
-        int min, sec = 0;
+        int min, sec, ms = 0;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             DisplayTimer(label2);
-            sec++;
+            ms++;
 
+            if (ms == 10)
+            {
+                sec++;
+                ms = 0;
+            }
             if (sec == 60)
             {
                 min++;
@@ -83,6 +88,9 @@ namespace RandomSongGenerator
 
         private void PlayScale_Click(object sender, EventArgs e)
         {
+            timer1.Start();
+            DisplayTimer(label2);
+
             Scale a_Aeolien = RandomSongGenerator.Scale.GetAminorSeptatonicScale();
 
             Note note1 = new Note(a_Aeolien.noteCollection[0], Duration.QUARTER);
@@ -106,15 +114,19 @@ namespace RandomSongGenerator
 
         private void RandomButton_Click(object sender, EventArgs e)
         {
+            
+            
             while(true)
             {
+                timer1.Start();
+                DisplayTimer(label2);
                 int selectedIndex = ScaleOptions.SelectedIndex;
                 label1.Text = stringList[selectedIndex].ToString();
                 
                 if (label1.Text == "A Aeolien")
                 {
                     audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorSeptatonicScale()), (int)tempoInput.Value);
-                    timer1.Start();
+                    
                 }
                 if (label1.Text == "A Ionian")
                 {
@@ -139,7 +151,7 @@ namespace RandomSongGenerator
         
         private void StopButton_Click(object sender, EventArgs e)
         {
-            
+            timer1.Stop();
         }
 
         private void ScaleOptions_DoubleClick(object sender, EventArgs e)
@@ -159,8 +171,34 @@ namespace RandomSongGenerator
 
         private void DisplayTimer(Label timerDisplay)
         {
-            timerDisplay.Text = min + ":" + sec.ToString();
+            timerDisplay.Text = min + ":" + sec + ":" + ms.ToString();
         }
+        
+        private void TimerThread()
+        {
+            Thread thread1 = new Thread(new ThreadStart(A));
+            //Thread thread2 = new Thread(new ThreadStart(B));
+            thread1.Start();
+            //thread2.Start();
+            thread1.Join();
+            //thread2.Join();
+        }
+        /*
+        static void A()
+        {
+            Thread.Sleep(100);
+            Console.WriteLine('A');
+        }
+        
+        static void B()
+        {
+            Thread.Sleep(1000);
+            Console.WriteLine('B');
+        }
+         */ 
+        
+
+        
 
         
 
