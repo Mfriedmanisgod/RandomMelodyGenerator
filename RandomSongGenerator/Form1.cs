@@ -23,7 +23,7 @@ namespace RandomSongGenerator
         List<Scale> scaleChoicesList = new List<Scale>();
         List<string> stringList = new List<string>();
         Scale scale = new Scale();
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -45,12 +45,12 @@ namespace RandomSongGenerator
             stringList.Add(a_MinorPentatonic);
             stringList.Add(a_Ionian);
             stringList.Add(a_Chromatic);
-           
+
             ScaleOptions.DataSource = stringList;
             ScaleOptions.Text = stringList.ToString();
- 
+
             tempoInput.Maximum = Audioplayer.MAX_TEMPO;
-            tempoInput.Minimum = Audioplayer.MIN_TEMPO; 
+            tempoInput.Minimum = Audioplayer.MIN_TEMPO;
         }
         int min, sec, ms = 0;
 
@@ -90,9 +90,10 @@ namespace RandomSongGenerator
         {
             timer1.Start();
             DisplayTimer(label2);
-
+            backgroundWorker1.RunWorkerAsync();
+            /*
             Scale a_Aeolien = RandomSongGenerator.Scale.GetAminorSeptatonicScale();
-
+            
             Note note1 = new Note(a_Aeolien.noteCollection[0], Duration.QUARTER);
             Note note2 = new Note(a_Aeolien.noteCollection[1], Duration.QUARTER);
             Note note3 = new Note(a_Aeolien.noteCollection[2], Duration.QUARTER);
@@ -110,23 +111,23 @@ namespace RandomSongGenerator
             audioPlayer.Play(note6, (int)tempoInput.Value);
             audioPlayer.Play(note7, (int)tempoInput.Value);
             audioPlayer.Play(note8, (int)tempoInput.Value);
+             */
         }
 
         private void RandomButton_Click(object sender, EventArgs e)
         {
-            
-            
-            while(true)
+
+
+            while (true)
             {
                 timer1.Start();
                 DisplayTimer(label2);
                 int selectedIndex = ScaleOptions.SelectedIndex;
                 label1.Text = stringList[selectedIndex].ToString();
-                
+
                 if (label1.Text == "A Aeolien")
                 {
                     audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorSeptatonicScale()), (int)tempoInput.Value);
-                    
                 }
                 if (label1.Text == "A Ionian")
                 {
@@ -144,11 +145,11 @@ namespace RandomSongGenerator
                 {
                     audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetA_chromaticScale()), (int)tempoInput.Value);
                 }
-                
-             }
-            
+
+            }
+
         }
-        
+
         private void StopButton_Click(object sender, EventArgs e)
         {
             timer1.Stop();
@@ -166,7 +167,7 @@ namespace RandomSongGenerator
                 //http://www.c-sharpcorner.com/UploadFile/mike4/DotNetPiano11122005012432AM/DotNetPiano.aspx
                 //http://www.codeproject.com/Articles/6165/A-Piano-Key-Control-in-C
             }
-            
+
         }
 
         private void DisplayTimer(Label timerDisplay)
@@ -174,33 +175,63 @@ namespace RandomSongGenerator
             timerDisplay.Text = min + ":" + sec + ":" + ms.ToString();
         }
         
-        private void TimerThread()
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            Thread thread1 = new Thread(new ThreadStart(A));
-            //Thread thread2 = new Thread(new ThreadStart(B));
-            thread1.Start();
-            //thread2.Start();
-            thread1.Join();
-            //thread2.Join();
-        }
-        /*
-        static void A()
-        {
-            Thread.Sleep(100);
-            Console.WriteLine('A');
-        }
-        
-        static void B()
-        {
-            Thread.Sleep(1000);
-            Console.WriteLine('B');
-        }
-         */ 
-        
+            //Audioplayer audioPlayer = new Audioplayer();
+            
+            //audioPlayer = e.Argument as Audioplayer;
+            //
+            // Boring....
+            //
+            //Thread.Sleep(10000);
 
-        
+            Scale a_Aeolien = RandomSongGenerator.Scale.GetAminorSeptatonicScale();
+            a_Aeolien = e.Argument as Scale;
 
-        
+            try
+            {
+                Note note1 = new Note(a_Aeolien.noteCollection[0], Duration.QUARTER);
+                Note note2 = new Note(a_Aeolien.noteCollection[1], Duration.QUARTER);
+                Note note3 = new Note(a_Aeolien.noteCollection[2], Duration.QUARTER);
+                Note note4 = new Note(a_Aeolien.noteCollection[3], Duration.QUARTER);
+                Note note5 = new Note(a_Aeolien.noteCollection[4], Duration.QUARTER);
+                Note note6 = new Note(a_Aeolien.noteCollection[5], Duration.QUARTER);
+                Note note7 = new Note(a_Aeolien.noteCollection[6], Duration.QUARTER);
+                Note note8 = new Note(a_Aeolien.noteCollection[7], Duration.QUARTER);
+
+
+                audioPlayer.Play(note1, (int)tempoInput.Value);
+                audioPlayer.Play(note2, (int)tempoInput.Value);
+                audioPlayer.Play(note3, (int)tempoInput.Value);
+                audioPlayer.Play(note4, (int)tempoInput.Value);
+                audioPlayer.Play(note5, (int)tempoInput.Value);
+                audioPlayer.Play(note6, (int)tempoInput.Value);
+                audioPlayer.Play(note7, (int)tempoInput.Value);
+                audioPlayer.Play(note8, (int)tempoInput.Value);
+            }
+            catch(NullReferenceException)
+            {
+                
+            }
+
+            //
+            // Now, return the values we generated in this method.
+            // ... Use e.Result.
+            //
+            e.Result = a_Aeolien;
+            //e.Result = audioPlayer;
+            
+        }
+
+
+
+
+
+
+
+
+
+
 
     }
 }
