@@ -177,17 +177,8 @@ namespace RandomSongGenerator
         
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            //Audioplayer audioPlayer = new Audioplayer();
-            
-            //audioPlayer = e.Argument as Audioplayer;
-            //
-            // Boring....
-            //
-            //Thread.Sleep(10000);
-
             Scale a_Aeolien = RandomSongGenerator.Scale.GetAminorSeptatonicScale();
-            a_Aeolien = e.Argument as Scale;
-
+            
             try
             {
                 Note note1 = new Note(a_Aeolien.noteCollection[0], Duration.QUARTER);
@@ -198,7 +189,6 @@ namespace RandomSongGenerator
                 Note note6 = new Note(a_Aeolien.noteCollection[5], Duration.QUARTER);
                 Note note7 = new Note(a_Aeolien.noteCollection[6], Duration.QUARTER);
                 Note note8 = new Note(a_Aeolien.noteCollection[7], Duration.QUARTER);
-
 
                 audioPlayer.Play(note1, (int)tempoInput.Value);
                 audioPlayer.Play(note2, (int)tempoInput.Value);
@@ -214,13 +204,6 @@ namespace RandomSongGenerator
                 
             }
 
-            //
-            // Now, return the values we generated in this method.
-            // ... Use e.Result.
-            //
-            e.Result = a_Aeolien;
-            //e.Result = audioPlayer;
-            
         }
 
 
