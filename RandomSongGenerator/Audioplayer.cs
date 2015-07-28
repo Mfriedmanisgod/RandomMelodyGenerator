@@ -20,8 +20,6 @@ namespace RandomSongGenerator
             {
                 Play(n, tempo);
 
-                
-
             }
         }
 
@@ -47,6 +45,8 @@ namespace RandomSongGenerator
                     Console.Beep((int)n.NoteTone, (int)n.NoteDuration);
             }
         }
+
+        
 
         private int ConvertDuration(Duration originalDuration, int userTempo)
         {

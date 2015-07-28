@@ -20,9 +20,9 @@ namespace RandomSongGenerator
         /// <returns> returns one random scale tone from within the scale</returns>
         public Tone GetRandomTone(Scale s)
         {
-            int c = s.noteCollection.Length;
+            int c = s.toneCollection.Length;
             int randomNote = randomizer.Next(c);
-            Tone scaleTone = s.noteCollection[randomNote];
+            Tone scaleTone = s.toneCollection[randomNote];
             int randomScenario = randomizer.Next(0, 10);
 
             if (randomScenario == 0)
