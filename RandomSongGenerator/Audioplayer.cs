@@ -46,13 +46,6 @@ namespace RandomSongGenerator
             }
         }
 
-        public void PlayToneArray(string scale, int tempo)
-        {
-            Play(RandomSongGenerator.Scale.GetA_chromaticScale, tempo);
-        }
-
-        
-
         private int ConvertDuration(Duration originalDuration, int userTempo)
         {
             // user putting in 120 bpm will give us 2.0 since it is twice as fast 

@@ -91,13 +91,10 @@ namespace RandomSongGenerator
             timer1.Start();
             DisplayTimer(label2);
             backgroundWorker1.RunWorkerAsync();
-            
         }
 
         private void RandomButton_Click(object sender, EventArgs e)
         {
-
-
             while (true)
             {
                 timer1.Start();
@@ -157,12 +154,10 @@ namespace RandomSongGenerator
         
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            
             timer1.Start();
             DisplayTimer(label2);
             int selectedIndex = ScaleOptions.SelectedIndex;
             label1.Text = stringList[selectedIndex].ToString();
-
 
             if (label1.Text == "A Aeolien")
             {
