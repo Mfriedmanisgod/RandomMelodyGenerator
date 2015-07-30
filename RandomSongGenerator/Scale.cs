@@ -98,7 +98,19 @@ namespace RandomSongGenerator
             return chromaticScale;
         }
 
-        public Note[](Tone[], temp
+        public Note[] GetNoteArray()
+        {
+            int count = this.toneCollection.Length;
+            Note[] noteArray = new Note[count];
+
+            for (int i = 0; i < count; i++)
+            {
+                Note note = new Note(this.toneCollection[i], Duration.QUARTER);
+                noteArray[i] = note;
+            }
+
+            return noteArray;
+        }
 
         
     }

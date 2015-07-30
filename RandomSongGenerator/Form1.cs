@@ -157,29 +157,18 @@ namespace RandomSongGenerator
         
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            Scale a_Aeolien = RandomSongGenerator.Scale.GetAminorSeptatonicScale();
-
+            
             timer1.Start();
             DisplayTimer(label2);
             int selectedIndex = ScaleOptions.SelectedIndex;
             label1.Text = stringList[selectedIndex].ToString();
 
-            Note note1 = new Note(a_Aeolien.toneCollection[0], Duration.QUARTER);
-            Note note2 = new Note(a_Aeolien.toneCollection[1], Duration.QUARTER);
-            Note note3 = new Note(a_Aeolien.toneCollection[2], Duration.QUARTER);
-            Note note4 = new Note(a_Aeolien.toneCollection[3], Duration.QUARTER);
-            Note note5 = new Note(a_Aeolien.toneCollection[4], Duration.QUARTER);
-            Note note6 = new Note(a_Aeolien.toneCollection[5], Duration.QUARTER);
-            Note note7 = new Note(a_Aeolien.toneCollection[6], Duration.QUARTER);
-            Note note8 = new Note(a_Aeolien.toneCollection[7], Duration.QUARTER);
-
-            
 
             if (label1.Text == "A Aeolien")
             {
-                audioPlayer.Play();
+                audioPlayer.Play(RandomSongGenerator.Scale.GetAminorSeptatonicScale().GetNoteArray());
             }
-            /*
+            
             if (label1.Text == "A Ionian")
             {
                 audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAmajorSeptatonicScale()), (int)tempoInput.Value);

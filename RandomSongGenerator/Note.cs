@@ -29,34 +29,27 @@ namespace RandomSongGenerator
 
     public struct NoteArray
     {
-        public Scale[] scaleCollection { get; set; }
+        public Note[] noteCollection { get; set; }
         
-        public Note[] GetAminorArray()
+        public Note[] GetNoteArray(Scale scale)
         {
-            
-            Note[] noteArray = new Note[5];  
-            
-            
-         
+            int count = scale.toneCollection.Length;
+            Note[] noteArray = new Note[count];
 
-            
-            
-            
+            for (int i = 0; i < count; i++)
+            {
+                Note note = new Note(scale.toneCollection[i], Duration.QUARTER);
+                noteArray[i] = note;
+            }
+
             return noteArray;
         }
 
         
+    
+        
 
-        /*        
-        audioPlayer.Play(note1, (int)tempoInput.Value);
-        audioPlayer.Play(note2, (int)tempoInput.Value);
-                audioPlayer.Play(note3, (int)tempoInput.Value);
-                audioPlayer.Play(note4, (int)tempoInput.Value);
-                audioPlayer.Play(note5, (int)tempoInput.Value);
-                audioPlayer.Play(note6, (int)tempoInput.Value);
-                audioPlayer.Play(note7, (int)tempoInput.Value);
-                audioPlayer.Play(note8, (int)tempoInput.Value);
-          /*      
+        
     }
         
             
