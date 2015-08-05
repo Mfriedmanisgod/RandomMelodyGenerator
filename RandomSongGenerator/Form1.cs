@@ -166,19 +166,19 @@ namespace RandomSongGenerator
             
             if (label1.Text == "A Ionian")
             {
-                audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAmajorSeptatonicScale()), (int)tempoInput.Value);
+                audioPlayer.Play(RandomSongGenerator.Scale.GetAmajorSeptatonicScale().GetNoteArray());
             }
             if (label1.Text == "A Dorian")
             {
-                audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetA_DorianSeptatonicScale()), (int)tempoInput.Value);
+                audioPlayer.Play(RandomSongGenerator.Scale.GetA_DorianSeptatonicScale().GetNoteArray());
             }
             if (label1.Text == "A Minor Pentatonic")
             {
-                audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorPentatonicScale()), (int)tempoInput.Value);
+                audioPlayer.Play(RandomSongGenerator.Scale.GetAminorPentatonicScale().GetNoteArray());
             }
             if (label1.Text == "A Chromatic")
             {
-                audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetA_chromaticScale()), (int)tempoInput.Value);
+                audioPlayer.Play(RandomSongGenerator.Scale.GetA_chromaticScale().GetNoteArray());
             }
             /*
 
