@@ -156,71 +156,40 @@ namespace RandomSongGenerator
         {
             timer1.Start();
             DisplayTimer(label2);
-            int selectedIndex = ScaleOptions.SelectedIndex;
-            label1.Text = stringList[selectedIndex].ToString();
 
-            if (label1.Text == "A Aeolien")
-            {
-                audioPlayer.Play(RandomSongGenerator.Scale.GetAminorSeptatonicScale().GetNoteArray());
-            }
-            
-            if (label1.Text == "A Ionian")
-            {
-                audioPlayer.Play(RandomSongGenerator.Scale.GetAmajorSeptatonicScale().GetNoteArray());
-            }
-            if (label1.Text == "A Dorian")
-            {
-                audioPlayer.Play(RandomSongGenerator.Scale.GetA_DorianSeptatonicScale().GetNoteArray());
-            }
-            if (label1.Text == "A Minor Pentatonic")
-            {
-                audioPlayer.Play(RandomSongGenerator.Scale.GetAminorPentatonicScale().GetNoteArray());
-            }
-            if (label1.Text == "A Chromatic")
-            {
-                audioPlayer.Play(RandomSongGenerator.Scale.GetA_chromaticScale().GetNoteArray());
-            }
-            /*
-
-            /*
             try
             {
-                Note note1 = new Note(a_Aeolien.noteCollection[0], Duration.QUARTER);
-                Note note2 = new Note(a_Aeolien.noteCollection[1], Duration.QUARTER);
-                Note note3 = new Note(a_Aeolien.noteCollection[2], Duration.QUARTER);
-                Note note4 = new Note(a_Aeolien.noteCollection[3], Duration.QUARTER);
-                Note note5 = new Note(a_Aeolien.noteCollection[4], Duration.QUARTER);
-                Note note6 = new Note(a_Aeolien.noteCollection[5], Duration.QUARTER);
-                Note note7 = new Note(a_Aeolien.noteCollection[6], Duration.QUARTER);
-                Note note8 = new Note(a_Aeolien.noteCollection[7], Duration.QUARTER);
+                int selectedIndex = ScaleOptions.SelectedIndex;
+                label1.Text = stringList[selectedIndex].ToString();
 
-                audioPlayer.Play(note1, (int)tempoInput.Value);
-                audioPlayer.Play(note2, (int)tempoInput.Value);
-                audioPlayer.Play(note3, (int)tempoInput.Value);
-                audioPlayer.Play(note4, (int)tempoInput.Value);
-                audioPlayer.Play(note5, (int)tempoInput.Value);
-                audioPlayer.Play(note6, (int)tempoInput.Value);
-                audioPlayer.Play(note7, (int)tempoInput.Value);
-                audioPlayer.Play(note8, (int)tempoInput.Value);
+                if (label1.Text == "A Aeolien")
+                {
+                    audioPlayer.Play(RandomSongGenerator.Scale.GetAminorSeptatonicScale().GetNoteArray());
+                }
+
+                if (label1.Text == "A Ionian")
+                {
+                    audioPlayer.Play(RandomSongGenerator.Scale.GetAmajorSeptatonicScale().GetNoteArray());
+                }
+                if (label1.Text == "A Dorian")
+                {
+                    audioPlayer.Play(RandomSongGenerator.Scale.GetA_DorianSeptatonicScale().GetNoteArray());
+                }
+                if (label1.Text == "A Minor Pentatonic")
+                {
+                    audioPlayer.Play(RandomSongGenerator.Scale.GetAminorPentatonicScale().GetNoteArray());
+                }
+                if (label1.Text == "A Chromatic")
+                {
+                    audioPlayer.Play(RandomSongGenerator.Scale.GetA_chromaticScale().GetNoteArray());
+                }
             }
-            catch(NullReferenceException)
+            catch()
             {
-                
+
             }
-             */ 
-
+            
         }
-
-         
-
-
-
-
-
-
-
-
-
 
     }
 }
