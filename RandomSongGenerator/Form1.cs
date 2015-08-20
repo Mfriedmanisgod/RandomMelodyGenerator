@@ -151,44 +151,41 @@ namespace RandomSongGenerator
         {
             timerDisplay.Text = min + ":" + sec + ":" + ms.ToString();
         }
-        
+
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             timer1.Start();
             DisplayTimer(label2);
 
-            try
-            {
-                int selectedIndex = ScaleOptions.SelectedIndex;
-                label1.Text = stringList[selectedIndex].ToString();
-
-                if (label1.Text == "A Aeolien")
-                {
-                    audioPlayer.Play(RandomSongGenerator.Scale.GetAminorSeptatonicScale().GetNoteArray());
-                }
-
-                if (label1.Text == "A Ionian")
-                {
-                    audioPlayer.Play(RandomSongGenerator.Scale.GetAmajorSeptatonicScale().GetNoteArray());
-                }
-                if (label1.Text == "A Dorian")
-                {
-                    audioPlayer.Play(RandomSongGenerator.Scale.GetA_DorianSeptatonicScale().GetNoteArray());
-                }
-                if (label1.Text == "A Minor Pentatonic")
-                {
-                    audioPlayer.Play(RandomSongGenerator.Scale.GetAminorPentatonicScale().GetNoteArray());
-                }
-                if (label1.Text == "A Chromatic")
-                {
-                    audioPlayer.Play(RandomSongGenerator.Scale.GetA_chromaticScale().GetNoteArray());
-                }
-            }
-            catch()
-            {
-
-            }
+            //this.Invoke(new MethodInvoker(delegate { int selectedIndex.Enable = true; }));
             
+            selectedIndex = ScaleOptions.SelectedIndex;
+            label1.Text = stringList[selectedIndex].ToString();
+
+            if (label1.Text == "A Aeolien")
+            {
+                audioPlayer.Play(RandomSongGenerator.Scale.GetAminorSeptatonicScale().GetNoteArray());
+            }
+            if (label1.Text == "A Ionian")
+            {
+                audioPlayer.Play(RandomSongGenerator.Scale.GetAmajorSeptatonicScale().GetNoteArray());
+            }
+            if (label1.Text == "A Dorian")
+            {
+                audioPlayer.Play(RandomSongGenerator.Scale.GetA_DorianSeptatonicScale().GetNoteArray());
+            }
+            if (label1.Text == "A Minor Pentatonic")
+            {
+                audioPlayer.Play(RandomSongGenerator.Scale.GetAminorPentatonicScale().GetNoteArray());
+            }
+            if (label1.Text == "A Chromatic")
+            {
+                audioPlayer.Play(RandomSongGenerator.Scale.GetA_chromaticScale().GetNoteArray());
+            }
+
+
+
+
         }
 
     }
