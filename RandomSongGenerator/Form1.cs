@@ -52,6 +52,7 @@ namespace RandomSongGenerator
             tempoInput.Maximum = Audioplayer.MAX_TEMPO;
             tempoInput.Minimum = Audioplayer.MIN_TEMPO;
         }
+        
         int min, sec, ms = 0;
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -154,14 +155,17 @@ namespace RandomSongGenerator
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            timer1.Start();
-            DisplayTimer(label2);
+            //timer1.Start();
+            //DisplayTimer(label2);
 
-            //this.Invoke(new MethodInvoker(delegate { int selectedIndex.Enable = true; }));
+            this.Invoke(new MethodInvoker(delegate 
+                {
+                    timer1.Start();
+                    DisplayTimer(label2);
+                    int selectedIndex = ScaleOptions.SelectedIndex;
+                    label1.Text = stringList[selectedIndex].ToString();
+                }));
             
-            selectedIndex = ScaleOptions.SelectedIndex;
-            label1.Text = stringList[selectedIndex].ToString();
-
             if (label1.Text == "A Aeolien")
             {
                 audioPlayer.Play(RandomSongGenerator.Scale.GetAminorSeptatonicScale().GetNoteArray());
