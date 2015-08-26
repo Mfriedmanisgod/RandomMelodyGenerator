@@ -131,6 +131,15 @@ namespace RandomSongGenerator
         private void StopButton_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            backgroundWorker1.CancelAsync();
+            if (backgroundWorker1.CancellationPending == true)
+            {
+                backgroundWorker1 = null;
+            }
+            
+            
+            
+                      
         }
 
         private void ScaleOptions_DoubleClick(object sender, EventArgs e)
@@ -155,9 +164,6 @@ namespace RandomSongGenerator
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            //timer1.Start();
-            //DisplayTimer(label2);
-
             this.Invoke(new MethodInvoker(delegate 
                 {
                     timer1.Start();
@@ -169,6 +175,7 @@ namespace RandomSongGenerator
             if (label1.Text == "A Aeolien")
             {
                 audioPlayer.Play(RandomSongGenerator.Scale.GetAminorSeptatonicScale().GetNoteArray());
+
             }
             if (label1.Text == "A Ionian")
             {
