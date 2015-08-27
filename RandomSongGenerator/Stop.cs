@@ -10,26 +10,5 @@ namespace RandomSongGenerator
     class Stop
     {
 
-        public Stop()
-        {
-            Thread thread = new Thread(new ThreadStart(Sleep));
-            thread.Start();
-        }
-
-        public void Sleep()
-        {
-            Thread.Sleep(100);
-
-        }
-
-
-
-
-
-
-
-
-
-
     }
 }

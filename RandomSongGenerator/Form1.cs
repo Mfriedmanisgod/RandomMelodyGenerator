@@ -130,14 +130,21 @@ namespace RandomSongGenerator
 
         private void StopButton_Click(object sender, EventArgs e)
         {
-            timer1.Stop();
-            backgroundWorker1.CancelAsync();
-            if (backgroundWorker1.CancellationPending == true)
+            while(true)
             {
-                backgroundWorker1 = null;
+                timer1.Stop();
+                backgroundWorker1.CancelAsync();
+
+                if (backgroundWorker1.CancellationPending)
+                {
+                    break;
+                }
             }
-            
-            
+                
+
+                
+
+
             
                       
         }
@@ -175,7 +182,6 @@ namespace RandomSongGenerator
             if (label1.Text == "A Aeolien")
             {
                 audioPlayer.Play(RandomSongGenerator.Scale.GetAminorSeptatonicScale().GetNoteArray());
-
             }
             if (label1.Text == "A Ionian")
             {
@@ -192,6 +198,12 @@ namespace RandomSongGenerator
             if (label1.Text == "A Chromatic")
             {
                 audioPlayer.Play(RandomSongGenerator.Scale.GetA_chromaticScale().GetNoteArray());
+            }
+
+            if (this.backgroundWorker1.CancellationPending)
+            {
+                e.Cancel = true;
+                return;
             }
 
 

@@ -105,7 +105,7 @@ namespace RandomSongGenerator
 
             for (int i = 0; i < count; i++)
             {
-                Note note = new Note(this.toneCollection[i], Duration.QUARTER);
+                Note note = new Note(this.toneCollection[i], Duration.WHOLE);
                 noteArray[i] = note;
             }
 
