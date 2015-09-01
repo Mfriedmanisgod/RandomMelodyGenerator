@@ -130,23 +130,8 @@ namespace RandomSongGenerator
 
         private void StopButton_Click(object sender, EventArgs e)
         {
-            while(true)
-            {
-                timer1.Stop();
-                backgroundWorker1.CancelAsync();
-
-                if (backgroundWorker1.CancellationPending)
-                {
-                    break;
-                }
-            }
-                
-
-                
-
-
-            
-                      
+            timer1.Stop();
+            backgroundWorker1.CancelAsync();
         }
 
         private void ScaleOptions_DoubleClick(object sender, EventArgs e)
@@ -171,6 +156,8 @@ namespace RandomSongGenerator
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+            //BackgroundWorker worker = sender as BackgroundWorker;
+
             this.Invoke(new MethodInvoker(delegate 
                 {
                     timer1.Start();
@@ -200,13 +187,23 @@ namespace RandomSongGenerator
                 audioPlayer.Play(RandomSongGenerator.Scale.GetA_chromaticScale().GetNoteArray());
             }
 
-            if (this.backgroundWorker1.CancellationPending)
+            for (int i = 1; (i <= 10); i++)
             {
-                e.Cancel = true;
-                return;
+                backgroundWorker1.WorkerSupportsCancellation = true;
+
+                if ((backgroundWorker1.CancellationPending == true))
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                else
+                {
+                    // Perform a time consuming operation and report progress.
+                    System.Threading.Thread.Sleep(500);
+                    backgroundWorker1.ReportProgress((i * 10));
+                }
+
             }
-
-
 
 
         }
