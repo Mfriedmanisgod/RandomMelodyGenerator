@@ -91,7 +91,9 @@ namespace RandomSongGenerator
         {
             timer1.Start();
             DisplayTimer(label2);
+            audioPlayer.Play(PreloadedMelody.Metronome, (int)tempoInput.Value);
             backgroundWorker1.RunWorkerAsync();
+            
         }
 
         private void RandomButton_Click(object sender, EventArgs e)
@@ -186,7 +188,7 @@ namespace RandomSongGenerator
             {
                 audioPlayer.Play(RandomSongGenerator.Scale.GetA_chromaticScale().GetNoteArray());
             }
-
+            /*
             for (int i = 1; (i <= 10); i++)
             {
                 backgroundWorker1.WorkerSupportsCancellation = true;
@@ -202,8 +204,9 @@ namespace RandomSongGenerator
                     System.Threading.Thread.Sleep(500);
                     backgroundWorker1.ReportProgress((i * 10));
                 }
+              
 
-            }
+            }*/
 
 
         }

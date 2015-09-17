@@ -9,6 +9,7 @@ namespace RandomSongGenerator
     public enum Tone
     {
         REST = 0,
+        MetronomeClick = 49, 
         GbelowC = 196,
         A = 220,
         Asharp = 233,
