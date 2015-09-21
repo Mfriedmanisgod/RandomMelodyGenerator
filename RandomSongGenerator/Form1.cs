@@ -91,49 +91,22 @@ namespace RandomSongGenerator
         {
             timer1.Start();
             DisplayTimer(label2);
-            audioPlayer.Play(PreloadedMelody.Metronome, (int)tempoInput.Value);
+            //audioPlayer.Play(PreloadedMelody.Metronome, (int)tempoInput.Value);
             backgroundWorker1.RunWorkerAsync();
             
         }
 
         private void RandomButton_Click(object sender, EventArgs e)
         {
-            while (true)
-            {
-                timer1.Start();
-                DisplayTimer(label2);
-                int selectedIndex = ScaleOptions.SelectedIndex;
-                label1.Text = stringList[selectedIndex].ToString();
-
-                if (label1.Text == "A Aeolien")
-                {
-                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorSeptatonicScale()), (int)tempoInput.Value);
-                }
-                if (label1.Text == "A Ionian")
-                {
-                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAmajorSeptatonicScale()), (int)tempoInput.Value);
-                }
-                if (label1.Text == "A Dorian")
-                {
-                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetA_DorianSeptatonicScale()), (int)tempoInput.Value);
-                }
-                if (label1.Text == "A Minor Pentatonic")
-                {
-                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorPentatonicScale()), (int)tempoInput.Value);
-                }
-                if (label1.Text == "A Chromatic")
-                {
-                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetA_chromaticScale()), (int)tempoInput.Value);
-                }
-
-            }
-
+            timer1.Start();
+            DisplayTimer(label2);
+            backgroundWorker2.RunWorkerAsync();
         }
 
         private void StopButton_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            backgroundWorker1.CancelAsync();
+            //backgroundWorker1.CancelAsync();
         }
 
         private void ScaleOptions_DoubleClick(object sender, EventArgs e)
@@ -162,8 +135,8 @@ namespace RandomSongGenerator
 
             this.Invoke(new MethodInvoker(delegate 
                 {
-                    timer1.Start();
-                    DisplayTimer(label2);
+                    //timer1.Start();
+                    //DisplayTimer(label2);
                     int selectedIndex = ScaleOptions.SelectedIndex;
                     label1.Text = stringList[selectedIndex].ToString();
                 }));
@@ -207,6 +180,43 @@ namespace RandomSongGenerator
               
 
             }*/
+
+
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            this.Invoke(new MethodInvoker(delegate
+            {
+                //timer1.Start();
+                //DisplayTimer(label2);
+                int selectedIndex = ScaleOptions.SelectedIndex;
+                label1.Text = stringList[selectedIndex].ToString();
+            }));
+
+            while (true)
+            {
+                if (label1.Text == "A Aeolien")
+                {
+                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorSeptatonicScale()), (int)tempoInput.Value);
+                }
+                if (label1.Text == "A Ionian")
+                {
+                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAmajorSeptatonicScale()), (int)tempoInput.Value);
+                }
+                if (label1.Text == "A Dorian")
+                {
+                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetA_DorianSeptatonicScale()), (int)tempoInput.Value);
+                }
+                if (label1.Text == "A Minor Pentatonic")
+                {
+                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetAminorPentatonicScale()), (int)tempoInput.Value);
+                }
+                if (label1.Text == "A Chromatic")
+                {
+                    audioPlayer.Play(melodyGenerator.GetRandomNote(RandomSongGenerator.Scale.GetA_chromaticScale()), (int)tempoInput.Value);
+                }
+            }
 
 
         }
