@@ -135,31 +135,29 @@ namespace RandomSongGenerator
 
             this.Invoke(new MethodInvoker(delegate 
                 {
-                    //timer1.Start();
-                    //DisplayTimer(label2);
                     int selectedIndex = ScaleOptions.SelectedIndex;
                     label1.Text = stringList[selectedIndex].ToString();
                 }));
             
             if (label1.Text == "A Aeolien")
             {
-                audioPlayer.Play(RandomSongGenerator.Scale.GetAminorSeptatonicScale().GetNoteArray());
+                audioPlayer.Play(RandomSongGenerator.Scale.GetAminorSeptatonicScale().GetNoteArray(), (int)tempoInput.Value);
             }
             if (label1.Text == "A Ionian")
             {
-                audioPlayer.Play(RandomSongGenerator.Scale.GetAmajorSeptatonicScale().GetNoteArray());
+                audioPlayer.Play(RandomSongGenerator.Scale.GetAmajorSeptatonicScale().GetNoteArray(), (int)tempoInput.Value);
             }
             if (label1.Text == "A Dorian")
             {
-                audioPlayer.Play(RandomSongGenerator.Scale.GetA_DorianSeptatonicScale().GetNoteArray());
+                audioPlayer.Play(RandomSongGenerator.Scale.GetA_DorianSeptatonicScale().GetNoteArray(), (int)tempoInput.Value);
             }
             if (label1.Text == "A Minor Pentatonic")
             {
-                audioPlayer.Play(RandomSongGenerator.Scale.GetAminorPentatonicScale().GetNoteArray());
+                audioPlayer.Play(RandomSongGenerator.Scale.GetAminorPentatonicScale().GetNoteArray(), (int)tempoInput.Value);
             }
             if (label1.Text == "A Chromatic")
             {
-                audioPlayer.Play(RandomSongGenerator.Scale.GetA_chromaticScale().GetNoteArray());
+                audioPlayer.Play(RandomSongGenerator.Scale.GetA_chromaticScale().GetNoteArray(), (int)tempoInput.Value);
             }
             /*
             for (int i = 1; (i <= 10); i++)
@@ -188,8 +186,6 @@ namespace RandomSongGenerator
         {
             this.Invoke(new MethodInvoker(delegate
             {
-                //timer1.Start();
-                //DisplayTimer(label2);
                 int selectedIndex = ScaleOptions.SelectedIndex;
                 label1.Text = stringList[selectedIndex].ToString();
             }));

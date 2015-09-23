@@ -51,7 +51,7 @@ namespace RandomSongGenerator
             septatonicScale3.toneCollection = new Tone[8];
             septatonicScale3.toneCollection[0] = Tone.A;
             septatonicScale3.toneCollection[1] = Tone.B;
-            septatonicScale3.toneCollection[2] = Tone.Csharp;
+            septatonicScale3.toneCollection[2] = Tone.C;
             septatonicScale3.toneCollection[3] = Tone.D;
             septatonicScale3.toneCollection[4] = Tone.E;
             septatonicScale3.toneCollection[5] = Tone.Fsharp;
