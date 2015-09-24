@@ -91,8 +91,10 @@ namespace RandomSongGenerator
         {
             timer1.Start();
             DisplayTimer(label2);
-            //audioPlayer.Play(PreloadedMelody.Metronome, (int)tempoInput.Value);
             backgroundWorker1.RunWorkerAsync();
+            //backgroundWorker3.RunWorkerAsync();
+            //backgroundWorker2.RunWorkerAsync();
+            
             
         }
 
@@ -215,6 +217,14 @@ namespace RandomSongGenerator
             }
 
 
+        }
+
+        private void backgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while(true)
+            {
+                audioPlayer.Play(PreloadedMelody.Metronome, (int)tempoInput.Value);
+            }
         }
 
     }

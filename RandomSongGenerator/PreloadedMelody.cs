@@ -57,6 +57,8 @@ namespace RandomSongGenerator
 
         public static Note[] Metronome = 
             {
+                new Note(Tone.MetronomeClick, Duration.WHOLE),
+                /*
                 new Note(Tone.MetronomeClick, Duration.QUARTER),
                 new Note(Tone.MetronomeClick, Duration.QUARTER),
                 new Note(Tone.MetronomeClick, Duration.QUARTER),
@@ -69,7 +71,7 @@ namespace RandomSongGenerator
                 new Note(Tone.MetronomeClick, Duration.QUARTER),
                 new Note(Tone.MetronomeClick, Duration.QUARTER),
                 new Note(Tone.MetronomeClick, Duration.QUARTER),
-                new Note(Tone.MetronomeClick, Duration.QUARTER),
+                 */ 
             };
     }
 }
